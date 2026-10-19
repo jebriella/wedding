@@ -1,0 +1,141 @@
+/*
+ * Design tokens from design/Wedding Website v2.dc.html (mobile) and
+ * design/Wedding Website.dc.html (desktop, from 900px).
+ * Breakpoint: @media (min-width: 900px) — CSS variables can't be used in
+ * media queries, so the value is repeated in the component stylesheets.
+ */
+:root {
+  --color-bg: #dde9f2;
+  --color-bg-alt: #e7eff5;
+  --color-ink: #3c5670;
+  --color-ink-soft: #476377;
+  --color-ink-muted: #586f80;
+  --color-text: #4f677a;
+  --color-label: #527088;
+  --color-muted: #7f97a8;
+  --color-rule: #93b2c6;
+  --color-line-strong: #adc7d6;
+  --color-line: rgba(147, 178, 198, 0.45);
+  --color-frame: rgba(96, 126, 148, 0.35);
+  --color-accent: #9773bf;
+  --color-on-ink: #f4f8fb;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Jost', system-ui, sans-serif;
+
+  --nav-height: 60px;
+  --page-width: 1180px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-muted);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+/* Small uppercase label used above headings ("Vi gifter oss", "Nynäshamn" …) */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--color-label);
+}
+
+/* Rounded outline button ("Öppna vägbeskrivning", "Ring" …) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

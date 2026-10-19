@@ -13,7 +13,7 @@ A single-page, mobile-first site in **Swedish**, hosted on GitHub Pages.
 
 ```bash
 npm install          # first time
-npm run dev          # local dev server (http://localhost:5173/wedding/)
+npm run dev          # local dev server (http://localhost:5173/)
 npm run build        # typecheck + production build into dist/
 npm run preview      # serve dist/ locally
 npm run typecheck
@@ -60,7 +60,7 @@ docs/roadmap.md      What is planned next
 
 ## Gotchas
 
-- **Base path:** the site is served from `https://jebriella.github.io/wedding/`, so `vite.config.ts` sets `base: '/wedding/'`. Reference public files via `import.meta.env.BASE_URL` (e.g. `` `${import.meta.env.BASE_URL}images/flowers.png` ``) or import images from `src/` — never hard-code `/images/...`. If a custom domain is added, change `base` to `'/'`.
+- **Domain:** the site is served from the root of `https://gabriellafredrik.se/` (GitHub Pages custom domain, set in repo Settings → Pages), so `vite.config.ts` has `base: '/'`. Still import images from `src/` or use `import.meta.env.BASE_URL` for public files, so a base change stays a one-line edit. No `CNAME` file is needed — the Actions deploy ignores it.
 - **No backend.** GitHub Pages is static. The RSVP (O.S.A.) form is not built yet — `Rsvp.tsx` shows a "coming soon" notice. When built it must post to an external form service (see `docs/roadmap.md`); don't add server code.
 - Anchor offsets come from `scroll-padding-top` on `html` only — don't add `scroll-margin-top` to sections (they add up).
 - Never commit secrets. Any form-service endpoint ids go in `.env` as `VITE_*` variables (they end up public in the bundle, so only use ids meant to be public).
@@ -68,4 +68,5 @@ docs/roadmap.md      What is planned next
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml` (lint → build → deploy to Pages).
-One-time setup: GitHub repo → Settings → Pages → Source: **GitHub Actions**.
+One-time setup: GitHub repo → Settings → Pages → Source: **GitHub Actions**, Custom domain: `gabriellafredrik.se`, Enforce HTTPS.
+DNS for `gabriellafredrik.se` (at the registrar): A records to GitHub Pages' IPs (185.199.108–111.153), AAAA records (2606:50c0:8000–8003::153), and `www` CNAME → `jebriella.github.io`.

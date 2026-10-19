@@ -28,7 +28,7 @@ Store the endpoint in `.env` as `VITE_RSVP_ENDPOINT`.
 
 - [ ] Real toastmaster phone number and email in `src/content/site.ts` (design placeholders now)
 
-- [ ] Custom domain (then set `base: '/'` in `vite.config.ts` and add `public/CNAME`)
+- [x] Custom domain gabriellafredrik.se (`base: '/'`)
 - [ ] Social share image / Open Graph tags
 - [ ] Accessibility pass (contrast, focus states, form labels)
 - [ ] Optional: photo gallery after the wedding

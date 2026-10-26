@@ -78,10 +78,3 @@ export const faqs: Faq[] = [
     a: 'Vi älskar barn, men bröllopet är för vuxna gäster.',
   },
 ]
-
-export const contact = {
-  text: 'Frågor? Kontakta vår toastmaster Johanna',
-  // TODO: replace the design's placeholder phone number and email.
-  phone: '+46700000000',
-  email: 'toastmaster@exempel.se',
-}

@@ -32,20 +32,6 @@
   color: var(--color-ink-soft);
 }
 
-.text {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--color-text);
-  margin-top: 8px;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
 @media (min-width: 900px) {
   .inner {
     max-width: var(--page-width);

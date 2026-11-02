@@ -61,7 +61,7 @@ docs/roadmap.md      What is planned next
 ## Gotchas
 
 - **Domain:** the site is served from the root of `https://gabriellafredrik.se/` (GitHub Pages custom domain, set in repo Settings → Pages), so `vite.config.ts` has `base: '/'`. Still import images from `src/` or use `import.meta.env.BASE_URL` for public files, so a base change stays a one-line edit. No `CNAME` file is needed — the Actions deploy ignores it.
-- **No backend.** GitHub Pages is static. The RSVP (O.S.A.) form is not built yet — `Rsvp.tsx` shows a "coming soon" notice. When built it must post to an external form service (see `docs/roadmap.md`); don't add server code.
+- **No backend.** GitHub Pages is static. The RSVP (O.S.A.) form (`RsvpForm.tsx`) posts to a Google Apps Script web app that writes to a Google Sheet (`scripts/rsvp-apps-script.gs`, setup in `docs/rsvp-setup.md`). The URL comes from `VITE_RSVP_ENDPOINT` (`.env` locally, a repo Actions _variable_ in CI); without it the form shows but its submit button is disabled. Don't add server code.
 - Anchor offsets come from `scroll-padding-top` on `html` only — don't add `scroll-margin-top` to sections (they add up).
 - Never commit secrets. Any form-service endpoint ids go in `.env` as `VITE_*` variables (they end up public in the bundle, so only use ids meant to be public).
 

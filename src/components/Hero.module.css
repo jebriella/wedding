@@ -14,11 +14,12 @@
 
 .image {
   position: absolute;
-  inset: 0;
+  /* Gap under the nav so the top blooms aren't cut off. */
+  inset: 20px 0 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20px);
   object-fit: cover;
-  object-position: 50% 38%;
+  object-position: 50% 0%;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 100%);
   mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 100%);
 }
@@ -124,9 +125,16 @@
   }
 
   .image {
-    object-position: 50% 40%;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 32%, #000 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 32%, #000 100%);
+    object-position: 50% 0%;
+    /* Fade in from the left and out at the bottom, where the bouquet is cropped. */
+    -webkit-mask-image:
+      linear-gradient(90deg, transparent 0%, #000 32%, #000 100%),
+      linear-gradient(180deg, #000 75%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(90deg, transparent 0%, #000 32%, #000 100%),
+      linear-gradient(180deg, #000 75%, transparent 100%);
+    mask-composite: intersect;
   }
 
   .eyebrow {

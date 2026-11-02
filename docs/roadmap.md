@@ -10,7 +10,7 @@ Mobile: `design/Wedding Website v2.dc.html` (framed in `design/Mobile Preview.dc
 - ~~Plats & resa~~ and ~~Boende~~ — removed from the site
 - [x] Frågor — FAQ accordion
 - [x] O.S.A. section with "coming soon" notice
-- [ ] O.S.A. — RSVP form (yes/no, name, email, diet, note) with validation and thank-you state
+- [x] O.S.A. — RSVP form with validation and thank-you state (answers go to Google Sheets, see `docs/rsvp-setup.md`)
 - [x] Sticky "O.S.A. senast 1 juni" button at the bottom
 - [x] Floral images → WebP in `src/assets/flowers/` (`npm run images`)
 
@@ -22,7 +22,7 @@ GitHub Pages can't run a server, so the form needs an external service. Options:
 - **Google Sheets via Apps Script** — free, answers land in a spreadsheet; a small Apps Script web app receives the POST.
 - **Supabase / Firebase** — a real database, more setup; worth it only if guests need to edit their answer later.
 
-Store the endpoint in `.env` as `VITE_RSVP_ENDPOINT`.
+Chosen: **Google Sheets via Apps Script** — see `docs/rsvp-setup.md`. The endpoint is `VITE_RSVP_ENDPOINT` (`.env` locally, repo Actions variable for deploys).
 
 ## 3. Later
 

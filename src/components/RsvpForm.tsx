@@ -76,6 +76,7 @@ export function RsvpForm() {
 
   return (
     <form className={styles.form} onSubmit={onSubmit} noValidate>
+      <p className={styles.intro}>{t.intro}</p>
       <div className={styles.row}>
         <TextField
           label={t.firstName}

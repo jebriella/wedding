@@ -24,6 +24,7 @@ export const rsvp = {
 
 /** Labels and messages for the O.S.A. form. */
 export const rsvpForm = {
+  intro: 'Fyll i formuläret en gång per gäst – kommer ni som par svarar ni var för sig.',
   firstName: 'Förnamn',
   lastName: 'Efternamn',
   attending: 'Jag kommer',

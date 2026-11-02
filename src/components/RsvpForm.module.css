@@ -6,6 +6,13 @@
   gap: 24px;
 }
 
+.intro {
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+  color: var(--color-text);
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -232,6 +239,11 @@
 }
 
 @media (min-width: 900px) {
+  .intro {
+    text-align: left;
+    font-size: 16px;
+  }
+
   /* The desktop panel is already a card. */
   .thanks {
     text-align: left;
